@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand - Noorvi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .brand-section-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d32f2f;
+            /* Brand color or generic */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .brand-sub-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #424242;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .mrp-price {
+            text-decoration: line-through;
+            color: #878787;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .discount-badge {
+            color: #388e3c;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="back-btn" style="display: flex; align-items: center; margin-right: 10px;">
+                <a href="index.html" style="color: inherit; text-decoration: none; display: flex;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2874f0" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1 style="font-style: italic; color: #2874f0;">Noorvi</h1>
+                    <span
+                        style="font-size: 0.7rem; color: #9e9e9e; font-style: italic; display: block; margin-top: -5px;">Explore
+                        <span style="color: #ffe500; font-weight: bold;">Plus</span></span>
+                </a>
+            </div>
+            <div class="header-nav">
+                <a href="cart.html" class="cart-link">
+                    Cart <span id="cart-count">(0)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 id="brand-title" style="margin: 2rem 0; font-size: 2rem;">Brand Store</h1>
+
+        <div id="brand-content">
+            <div class="loading">Loading brand products...</div>
+        </div>
+    </div>
+
+    <script src="js/brand.js"></script>
+    <script>
+        // Temporary reuse of addToCart from main.js or redefine it?
+        // Ideally should import but we are not using modules.
+        // I will copy the addToCart logic to brand.js
+    </script>
+</body>
+
+</html>
