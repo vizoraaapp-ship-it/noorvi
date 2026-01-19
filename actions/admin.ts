@@ -95,7 +95,7 @@ export async function addProduct(state: any, formData: FormData) {
         images: imageUrls,       // New array column
         description,
         brand
-    })
+    } as any)
 
     if (error) {
         console.error('Add Product Error:', error)
@@ -164,7 +164,7 @@ export async function updateProduct(id: string, prevState: any, formData: FormDa
         brand,
         images: finalImageUrls,
         image_url: finalImageUrls.length > 0 ? finalImageUrls[0] : null // Update primary image
-    }).eq('id', id)
+    } as any).eq('id', id)
 
     if (error) {
         console.error('Update Product Error:', error)

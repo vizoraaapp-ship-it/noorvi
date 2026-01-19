@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Noorvi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .about-section {
+            background: white;
+            padding: 2rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            margin-bottom: 1rem;
+            color: #212121;
+        }
+
+        .about-section p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="back-btn" style="display: flex; align-items: center; margin-right: 10px;">
+                <a href="index.html" style="color: inherit; text-decoration: none; display: flex;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2874f0" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1 style="font-style: italic; color: #2874f0;">Noorvi</h1>
+                    <span
+                        style="font-size: 0.7rem; color: #9e9e9e; font-style: italic; display: block; margin-top: -5px;">Explore
+                        <span style="color: #ffe500; font-weight: bold;">Plus</span></span>
+                </a>
+            </div>
+            <div class="header-nav">
+                <a href="cart.html" class="cart-link">
+                    Cart <span id="cart-count">(0)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to Noorvi, your number one source for all wholesale cosmetics. We're dedicated to providing you
+                the best of cosmetic products, with a focus on dependability, customer service, and affordability.</p>
+            <p>We're working to turn our passion for cosmetics into a booming online store. We hope you enjoy our
+                products as much as we enjoy offering them to you.</p>
+            <p>Sincerely,<br>The Noorvi Team</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Noorvi Wholesale. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        // Simple script to update cart count on load since main.js might rely on grid existing
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

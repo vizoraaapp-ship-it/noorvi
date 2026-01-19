@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noorvi - Wholesale Cosmetics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="menu-icon" style="cursor: pointer; display: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" stroke="#2874f0" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+            <div class="logo">
+                <a href="/" style="text-decoration: none; color: inherit;">
+                    <h1 style="font-style: italic; color: #2874f0;">Noorvi</h1>
+                    <span
+                        style="font-size: 0.7rem; color: #9e9e9e; font-style: italic; display: block; margin-top: -5px;">Explore
+                        <span style="color: #ffe500; font-weight: bold;">Plus</span></span>
+                </a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands and more">
+                <button><svg width="20" height="20" viewBox="0 0 17 18" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#2874F0" fill-rule="evenodd">
+                            <path class="_34RNph"
+                                d="m11.618 9.897 4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203">
+                            </path>
+                            <path class="_34RNph"
+                                d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467">
+                            </path>
+                        </g>
+                    </svg></button>
+            </div>
+            <div class="header-nav">
+                <span class="desktop-nav-links">
+                    <a href="about.html" style="margin-right: 1.5rem; display: inline-block;">About Us</a>
+                    <a href="contact.html" style="margin-right: 1.5rem; display: inline-block;">Contact Us</a>
+                </span>
+                <a href="cart.html" class="cart-link">
+                    <svg class="V3C5bO" width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path class="_1bS9ic"
+                            d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.149 0 0 .149 0 .336v.755C0 1.278.149 1.428.336 1.428h.98a.552.552 0 0 1 .5.334l.322.93a3.84 3.84 0 0 0 1.34 1.964L2.8 12.064c.265.59 1.13.59 1.41.02l.617-1.258h6.297l.617 1.258c.28.57 1.145.57 1.41-.02l-.68-1.53c.092-.128.21-.24.347-.32l.702-.416c.46-.273.68-.828.536-1.345L13.1 3.59a.723.723 0 0 0 .048-.256c0-.517-.42-.929-.94-.929zM3.4 13.926a1.411 1.411 0 1 1 1.41-1.41A1.412 1.412 0 0 1 3.4 13.926zm10.038 0a1.411 1.411 0 1 1 1.41-1.41A1.413 1.413 0 0 1 13.438 13.926z"
+                            fill="#2874f0"></path>
+                    </svg>
+                    <span>Cart <span id="cart-count">(0)</span></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-user">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg"
+                    alt="User">
+                <span style="font-weight: 600;">Welcome</span>
+            </div>
+            <div class="close-sidebar" id="close-sidebar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <a href="about.html" class="sidebar-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About Us
+            </a>
+            <a href="contact.html" class="sidebar-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Contact Us
+            </a>
+            <a href="cart.html" class="sidebar-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                My Cart
+            </a>
+        </nav>
+    </div>
+
+    <!-- Categories -->
+    <nav class="categories">
+        <div class="container category-list">
+            <div class="category-item active" data-category="">
+                <div class="cat-img"><img
+                        src="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/698ba0cebe456aaf.jpg?q=100" alt="All">
+                </div> <!-- Placeholder uses Flipkart generic 'Top Offers' style icon if available, or just random -->
+                <span>All</span>
+            </div>
+            <div class="category-item" data-category="Lipstick">
+                <div class="cat-img"><img
+                        src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=100"
+                        alt="Lipstick"></div>
+                <span>Lipstick</span>
+            </div>
+            <div class="category-item" data-category="Mascara">
+                <div class="cat-img"><img
+                        src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?auto=format&fit=crop&q=80&w=100"
+                        alt="Mascara"></div>
+                <span>Mascara</span>
+            </div>
+            <div class="category-item" data-category="Foundation">
+                <div class="cat-img"><img
+                        src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&q=80&w=100"
+                        alt="Foundation"></div>
+                <span>Foundation</span>
+            </div>
+            <div class="category-item" data-category="Compact">
+                <div class="cat-img"><img
+                        src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=100"
+                        alt="Compact"></div>
+                <span>Compact</span>
+            </div>
+            <div class="category-item" data-category="Skincare">
+                <div class="cat-img"><img
+                        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=100"
+                        alt="Skincare"></div>
+                <span>Skincare</span>
+            </div>
+            <div class="category-item" data-category="Accessories">
+                <div class="cat-img"><img
+                        src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?auto=format&fit=crop&q=80&w=100"
+                        alt="Accessories"></div>
+                <span>Accessories</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="container">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide"><img
+                            src="https://images.unsplash.com/photo-1522335789203-abd1c1cd90be?auto=format&fit=crop&q=80&w=1200&h=400"
+                            alt="Cosmetics Banner 1"></div>
+                    <div class="slide"><img
+                            src="https://images.unsplash.com/photo-1596462502278-27bfdd403348?auto=format&fit=crop&q=80&w=1200&h=400"
+                            alt="Cosmetics Banner 2"></div>
+                    <div class="slide"><img
+                            src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=1200&h=400"
+                            alt="Cosmetics Banner 3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="container" style="margin-bottom: 2rem;">
+        <h2 class="section-title">Shop by Brand</h2>
+        <div
+            style="background: white; padding: 1rem; border-radius: 0 0 2px 2px; box-shadow: 0 1px 1px 0 rgba(0,0,0,.16); display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+            <!-- MARS Brand -->
+            <a href="brand.html?name=MARS"
+                style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; width: 120px;">
+                <div
+                    style="width: 100%; height: 80px; border-radius: 4px; border: 1px solid #eee; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+                    <!-- Placeholder logo or text -->
+                    <img src="images/mars_logo.png" alt="MARS"
+                        style="max-width: 80%; max-height: 80%; object-fit: contain;">
+                </div>
+                <span style="font-weight: 500;">MARS</span>
+            </a>
+            <!-- Expansion ready for other brands -->
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <main class="container">
+        <h2 class="section-title">Latest Products</h2>
+        <div id="product-grid" class="product-grid">
+            <!-- Products will be loaded here -->
+            <div class="loading">Loading products...</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Noorvi Wholesale. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

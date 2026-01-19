@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Noorvi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Simplified Header for Detail Page -->
+    <header class="cart-header">
+        <div class="container" style="display: flex; align-items: center; gap: 1rem;">
+            <a href="index.html" class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2874f0" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </a>
+            <div style="font-weight: 500; font-size: 1.1rem; color: #212121;">Product Details</div>
+
+            <a href="cart.html" class="cart-link" style="margin-left: auto; position: relative;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2874f0" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cart-count-badge"
+                    style="position: absolute; top: -5px; right: -5px; background: #ff6161; color: white; font-size: 0.7rem; border-radius: 50%; padding: 2px 5px; display: none;">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container product-detail-page">
+        <!-- Hero Section -->
+        <div class="product-hero">
+            <div class="product-hero-inner">
+                <img id="detail-img" src="" alt="Product Image">
+                <!-- Optional: Like Button overlay -->
+                <button class="wishlist-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#c2c2c2" stroke="none">
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="product-info-section">
+            <div class="product-brand" id="detail-brand">Brand Name</div>
+            <h1 class="product-title" id="detail-name">Product Name</h1>
+
+            <div class="rating-row">
+                <span class="rating-badge">4.2 ★</span>
+                <span class="rating-count">6,732 ratings</span>
+            </div>
+
+            <div class="price-row-large">
+                <span class="final-price" id="detail-price">₹0</span>
+                <span class="mrp-price" id="detail-mrp">₹0</span>
+                <span class="discount-label" id="detail-discount">0% off</span>
+            </div>
+        </div>
+
+        <!-- Variant Selection (Mock) -->
+        <div class="variant-section">
+            <div class="section-label">Selected Color: <span id="selected-color-name">Jet Black</span></div>
+            <div class="variant-options">
+                <div class="variant-thumb active"><img src="https://via.placeholder.com/40" alt="Color 1"></div>
+                <div class="variant-thumb"><img src="https://via.placeholder.com/40/000000" alt="Color 2"></div>
+                <div class="variant-thumb"><img src="https://via.placeholder.com/40/333333" alt="Color 3"></div>
+            </div>
+        </div>
+
+        <!-- Description / Specs -->
+        <div class="description-section">
+            <div class="section-label">Description</div>
+            <p id="detail-desc" style="color: #666; line-height: 1.5; font-size: 0.9rem;">
+                Loading product description...
+            </p>
+        </div>
+
+        <!-- Similar Products -->
+        <div class="similar-products-section">
+            <div class="section-header">
+                <h3>Similar Products</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="similar-scroll-container" id="similar-list">
+                <!-- Similar items injected here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky Footer -->
+    <div class="product-sticky-footer">
+        <button class="footer-btn add-cart" id="add-to-cart-sticky">Add to Cart</button>
+        <button class="footer-btn buy-now" id="buy-now-sticky">Buy at ₹<span id="buy-btn-price">0</span></button>
+    </div>
+
+    <script src="js/main.js"></script> <!-- Reusing main for global setup -->
+    <script src="js/product-detail.js"></script>
+</body>
+
+</html>
