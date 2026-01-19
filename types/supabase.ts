@@ -22,6 +22,7 @@ export interface Database {
                     id?: string
                     name?: string
                 }
+                Relationships: []
             }
             products: {
                 Row: {
@@ -57,6 +58,7 @@ export interface Database {
                     created_at?: string
                     brand?: string | null
                 }
+                Relationships: []
             }
             orders: {
                 Row: {
@@ -92,6 +94,7 @@ export interface Database {
                     user_id?: string | null
                     total_price?: number | null
                 }
+                Relationships: []
             }
             wishlist: {
                 Row: {
@@ -112,7 +115,54 @@ export interface Database {
                     product_id?: string
                     created_at?: string
                 }
+                Relationships: [
+                    {
+                        foreignKeyName: "wishlist_product_id_fkey"
+                        columns: ["product_id"]
+                        referencedRelation: "products"
+                        referencedColumns: ["id"]
+                    }
+                ]
             }
+            profiles: {
+                Row: {
+                    id: string
+                    email: string
+                    full_name: string | null
+                    avatar_url: string | null
+                    role: string | null
+                    created_at: string
+                }
+                Insert: {
+                    id: string
+                    email: string
+                    full_name?: string | null
+                    avatar_url?: string | null
+                    role?: string | null
+                    created_at?: string
+                }
+                Update: {
+                    id?: string
+                    email?: string
+                    full_name?: string | null
+                    avatar_url?: string | null
+                    role?: string | null
+                    created_at?: string
+                }
+                Relationships: []
+            }
+        }
+        Views: {
+            [_ in never]: never
+        }
+        Functions: {
+            [_ in never]: never
+        }
+        Enums: {
+            [_ in never]: never
+        }
+        CompositeTypes: {
+            [_ in never]: never
         }
     }
 }
