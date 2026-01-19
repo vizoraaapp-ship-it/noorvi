@@ -87,6 +87,7 @@ export async function addProduct(state: any, formData: FormData) {
 
     const sellingPrice = Math.round(price * 0.8) // 20% off logic
 
+    // @ts-ignore
     const { error } = await supabase.from('products').insert({
         name,
         category,
@@ -156,6 +157,7 @@ export async function updateProduct(id: string, prevState: any, formData: FormDa
 
     const sellingPrice = Math.round(price * 0.8) // Re-calculate price? If user edits price, yes.
 
+    // @ts-ignore
     const { error } = await supabase.from('products').update({
         name,
         category,
