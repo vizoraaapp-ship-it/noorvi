@@ -6,6 +6,12 @@ import { SupabaseClient } from '@supabase/supabase-js'
 
 export const createClient = (): SupabaseClient<Database> => {
     const cookieStore = cookies()
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        // Safe fallback for build time - return a dummy client or throw strictly at runtime
+        // Since we marked pages as dynamic, this shouldn't run during build for those pages.
+        // But for safety:
+        throw new Error('Supabase Env Vars missing');
+    }
     return createServerComponentClient<Database>({
         cookies: () => ({
             getAll: () => cookieStore.getAll(),
@@ -23,12 +29,19 @@ export const createClient = (): SupabaseClient<Database> => {
 
 export const createActionClient = (): SupabaseClient<Database> => {
     const cookieStore = cookies()
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        throw new Error('Supabase Env Vars missing');
+    }
     return createServerActionClient<Database>({ cookies: () => cookieStore }) as any as SupabaseClient<Database>
 }
 
 export const createSafeSupabaseClient = () => {
     const cookieStore = cookies()
     try {
+        if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+            console.warn('Supabase Env Vars missing during createSafeSupabaseClient');
+            return null;
+        }
         return createServerComponentClient<Database>({
             cookies: () => ({
                 getAll: () => cookieStore.getAll(),

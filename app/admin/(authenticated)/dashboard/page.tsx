@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
+export const dynamic = 'force-dynamic';
 import { Users, ShoppingBag, CreditCard, TrendingUp, Calendar, DollarSign } from 'lucide-react'
 
 // Helper to format currency

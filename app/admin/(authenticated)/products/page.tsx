@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+export const dynamic = 'force-dynamic';
 import Image from 'next/image';
 import DeleteProductButton from './DeleteButton';
 import Link from 'next/link';

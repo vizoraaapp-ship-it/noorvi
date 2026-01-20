@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic';
 
 import { addProduct } from '@/actions/admin'
 import { useState } from 'react'
