@@ -1,6 +1,7 @@
 import { createSafeSupabaseClient } from '@/lib/supabase/server';
 import ProductCard from '@/components/ProductCard';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const revalidate = 0;
 
@@ -47,7 +48,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     <h1 className="text-xl font-medium text-gray-800">
                         {query ? (
                             <>
-                                Search results for <span className="font-bold">"{query}"</span>
+                                Search results for <span className="font-bold">&quot;{query}&quot;</span>
                                 <span className="text-sm text-gray-500 ml-2">({products.length} items)</span>
                             </>
                         ) : (
@@ -72,9 +73,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
                 {products.length === 0 && query && (
                     <div className="flex flex-col items-center justify-center py-20 bg-white rounded-lg shadow-sm">
-                        <img
+                        <Image
                             src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/error-no-search-results_2353c5.png"
                             alt="No results"
+                            width={256}
+                            height={256}
                             className="w-64 mb-6 opacity-80"
                         />
                         <h2 className="text-xl font-semibold text-gray-800 mb-2">Sorry, no results found!</h2>

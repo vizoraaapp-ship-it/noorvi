@@ -132,6 +132,7 @@ export interface Database {
                     avatar_url: string | null
                     role: string | null
                     created_at: string
+                    phone: string | null
                 }
                 Insert: {
                     id: string
@@ -140,6 +141,7 @@ export interface Database {
                     avatar_url?: string | null
                     role?: string | null
                     created_at?: string
+                    phone?: string | null
                 }
                 Update: {
                     id?: string
@@ -148,6 +150,7 @@ export interface Database {
                     avatar_url?: string | null
                     role?: string | null
                     created_at?: string
+                    phone?: string | null
                 }
                 Relationships: []
             }

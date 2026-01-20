@@ -76,7 +76,7 @@ export default async function AdminDashboard() {
         <div className="space-y-8">
             <div>
                 <h2 className="text-3xl font-bold text-gray-900">Dashboard</h2>
-                <p className="mt-1 text-gray-500">Overview of your store's performance.</p>
+                <p className="mt-1 text-gray-500">Overview of your store&apos;s performance.</p>
             </div>
 
             {/* Key Metrics Grid */}
@@ -117,7 +117,7 @@ export default async function AdminDashboard() {
                 {/* Daily Income */}
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
                     <div>
-                        <p className="text-sm font-medium text-gray-500">Today's Income</p>
+                        <p className="text-sm font-medium text-gray-500">Today&apos;s Income</p>
                         <p className="text-2xl font-bold text-gray-900 mt-1">{formatCurrency(dailyIncome)}</p>
                     </div>
                     <div className="bg-yellow-50 p-3 rounded-lg text-yellow-600">

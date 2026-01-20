@@ -14,7 +14,7 @@ export default async function OrdersPage() {
     // Fetch user profile for phone number fallback
     const { data: profile } = await supabase
         .from('profiles')
-        .select('phone')
+        .select('*')
         .eq('id', user.id)
         .single()
 
@@ -100,7 +100,7 @@ export default async function OrdersPage() {
                     <div className="text-center py-12 bg-white rounded-lg shadow-sm">
                         <Package className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                         <h3 className="text-lg font-medium text-gray-900">No orders found</h3>
-                        <p className="text-gray-500 mt-1">Looks like you haven't placed any orders yet.</p>
+                        <p className="text-gray-500 mt-1">Looks like you haven&apos;t placed any orders yet.</p>
                         <Link href="/" className="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
                             Start Shopping
                         </Link>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BRANDS = [
     { id: 'mars', name: 'MARS', logo: '/brands/mars-logo-update.png' },
@@ -18,12 +19,13 @@ export default function BrandSection() {
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4 px-4">
                 {BRANDS.map((brand) => (
                     <Link key={brand.id} href={`/brand/${brand.name}`} className="flex flex-col items-center group p-2 border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-all">
-                        <div className="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-md mb-2 overflow-hidden">
+                        <div className="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-md mb-2 overflow-hidden relative">
                             {brand.logo ? (
-                                <img
+                                <Image
                                     src={brand.logo}
                                     alt={brand.name}
-                                    className="h-full w-full object-cover"
+                                    fill
+                                    className="object-cover"
                                 />
                             ) : (
                                 <span className="font-bold text-gray-700 tracking-wider">{brand.name}</span>

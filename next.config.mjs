@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'tyxmwjounzpftvcrsrie.supabase.co',
       },
+      {
+        protocol: 'https',
+        hostname: 'static-assets-web.flixcart.com',
+      },
     ],
   },
   async redirects() {

@@ -29,7 +29,14 @@ export const createActionClient = (): SupabaseClient<Database> => {
 export const createSafeSupabaseClient = () => {
     const cookieStore = cookies()
     try {
-        return createServerComponentClient<Database>({ cookies: () => cookieStore })
+        return createServerComponentClient<Database>({
+            cookies: () => ({
+                getAll: () => cookieStore.getAll(),
+                get: (name: string) => cookieStore.get(name),
+                set: (name: string, value: string, options: any) => { },
+                remove: (name: string, options: any) => { },
+            } as any)
+        })
     } catch (error) {
         // Return null if something fails (missing envs etc)
         console.error('Failed to create supabase client:', error)

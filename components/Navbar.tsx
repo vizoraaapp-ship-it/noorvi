@@ -17,9 +17,6 @@ export default function Navbar() {
     const router = useRouter();
     const pathname = usePathname();
 
-    // Hide Navbar on Admin pages
-    if (pathname?.startsWith('/admin')) return null;
-
     useEffect(() => {
         // Initial load
         setCartCount(getCart().reduce((acc, item) => acc + item.quantity, 0));
@@ -32,6 +29,9 @@ export default function Navbar() {
         window.addEventListener('cart-updated', handleCartUpdate);
         return () => window.removeEventListener('cart-updated', handleCartUpdate);
     }, []);
+
+    // Hide Navbar on Admin pages
+    if (pathname?.startsWith('/admin')) return null;
 
     return (
         <nav className="bg-white text-gray-800 sticky top-0 z-50 shadow-sm border-b border-gray-100">
