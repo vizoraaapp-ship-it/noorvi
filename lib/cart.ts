@@ -3,7 +3,7 @@ export type { CartItem };
 
 export const getCart = (): CartItem[] => {
     if (typeof window === 'undefined') return [];
-    const cart = localStorage.getItem('noorvi_cart');
+    const cart = localStorage.getItem('veda_cart');
     return cart ? JSON.parse(cart) : [];
 };
 
@@ -17,7 +17,7 @@ export const addToCart = (product: CartItem) => {
         cart.push({ ...product, quantity: 1 });
     }
 
-    localStorage.setItem('noorvi_cart', JSON.stringify(cart));
+    localStorage.setItem('veda_cart', JSON.stringify(cart));
     // Dispatch a custom event to update UI immediately
     window.dispatchEvent(new Event('cart-updated'));
 };
@@ -25,7 +25,7 @@ export const addToCart = (product: CartItem) => {
 export const removeFromCart = (productId: string) => {
     const cart = getCart();
     const newCart = cart.filter((item) => item.id !== productId);
-    localStorage.setItem('noorvi_cart', JSON.stringify(newCart));
+    localStorage.setItem('veda_cart', JSON.stringify(newCart));
     window.dispatchEvent(new Event('cart-updated'));
 };
 
@@ -39,12 +39,12 @@ export const updateQuantity = (productId: string, quantity: number) => {
         } else {
             cart[itemIndex].quantity = quantity;
         }
-        localStorage.setItem('noorvi_cart', JSON.stringify(cart));
+        localStorage.setItem('veda_cart', JSON.stringify(cart));
         window.dispatchEvent(new Event('cart-updated'));
     }
 };
 
 export const clearCart = () => {
-    localStorage.removeItem('noorvi_cart');
+    localStorage.removeItem('veda_cart');
     window.dispatchEvent(new Event('cart-updated'));
 }

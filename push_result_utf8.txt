@@ -1,0 +1,49 @@
+﻿git : To https://gith
+ub.com/vizoraaapp-shi
+p-it/noorvi.git
+At line:1 char:99
++ ... pp-ship-it/noor
+vi.git; git push -u 
+origin main > 
+push_result.txt 2>&1
++                    
+        ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (To http   
+ s://gith...p-it/    
+noorvi.git:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+ ! [rejected]        
+main -> main (fetch 
+first)
+error: failed to 
+push some refs to 'ht
+tps://github.com/vizo
+raaapp-ship-it/noorvi
+.git'
+hint: Updates were 
+rejected because the 
+remote contains work 
+that you do not
+hint: have locally. 
+This is usually 
+caused by another 
+repository pushing to
+hint: the same ref. 
+If you want to 
+integrate the remote 
+changes, use
+hint: 'git pull' 
+before pushing again.
+hint: See the 'Note 
+about fast-forwards' 
+in 'git push --help' 
+for details.

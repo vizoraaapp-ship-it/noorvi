@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Noorvi Wholesale Cosmetic",
+  title: "VEDA Beauty",
   description: "Best wholesale prices for cosmetics",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
           </main>
           <footer className="bg-gray-900 text-white py-8 mt-auto">
             <div className="max-w-7xl mx-auto px-4 text-center">
-              <p className="text-sm text-gray-400">© 2024 Noorvi Wholesale. All rights reserved.</p>
+              <p className="text-sm text-gray-400">© 2024 VEDA Beauty. All rights reserved.</p>
             </div>
           </footer>
         </AuthProvider>

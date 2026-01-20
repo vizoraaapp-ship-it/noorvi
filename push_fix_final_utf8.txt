@@ -1,0 +1,24 @@
+﻿git : To https://gith
+ub.com/vizoraaapp-shi
+p-it/noorvi.git
+At line:1 char:1
++ git push origin 
+main > 
+push_fix_final.txt 
+2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (To http   
+ s://gith...p-it/    
+noorvi.git:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+   97b1aaf..02d0e44  
+main -> main

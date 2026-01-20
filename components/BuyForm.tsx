@@ -21,7 +21,7 @@ export default function BuyForm({ cart, total, onClose }: BuyFormProps) {
         e.preventDefault();
 
         // Construct WhatsApp message
-        const message = `Hello Noorvi,\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}\n\nProducts:\n${cart.map(item => `- ${item.name} (Qty: ${item.quantity})`).join('\n')}\n\nTotal: ₹${total}\n\nPlease confirm availability.`;
+        const message = `Hello VEDA Beauty,\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}\n\nProducts:\n${cart.map(item => `- ${item.name} (Qty: ${item.quantity})`).join('\n')}\n\nTotal: ₹${total}\n\nPlease confirm availability.`;
 
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/917900127488?text=${encodedMessage}`;

@@ -1,0 +1,28 @@
+﻿git : error: You 
+have not concluded 
+your merge 
+(MERGE_HEAD exists).
+At line:1 char:1
++ git pull origin 
+main > 
+pull_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (error:    
+ You have...E_HEA    
+D exists).:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+hint: Please, commit 
+your changes before 
+merging.
+fatal: Exiting 
+because of 
+unfinished merge.

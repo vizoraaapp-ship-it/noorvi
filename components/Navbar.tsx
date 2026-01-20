@@ -51,7 +51,7 @@ export default function Navbar() {
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-1">
                             <div className="flex flex-col leading-none">
-                                <span className="font-bold text-base md:text-xl text-blue-600 italic tracking-wide">NOORVI</span>
+                                <span className="font-bold text-base md:text-xl text-blue-600 italic tracking-wide">VEDA BEAUTY</span>
                                 <span className="text-[9px] md:text-xs text-gray-500 font-medium">
                                     Wholesale Cosmetic
                                 </span>

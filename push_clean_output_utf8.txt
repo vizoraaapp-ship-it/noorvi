@@ -1,0 +1,25 @@
+﻿git : To https://gith
+ub.com/vizoraaapp-shi
+p-it/noorvi.git
+At line:1 char:116
++ ... ct Supabase 
+types"; git push 
+origin main > push_cl
+ean_output.txt 2>&1
++                    
+     ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (To http   
+ s://gith...p-it/    
+noorvi.git:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+   f05b56b..9960239  
+main -> main

@@ -2,15 +2,30 @@ import { createClient } from '@/lib/supabase/server';
 import Image from 'next/image';
 import DeleteProductButton from './DeleteButton';
 import Link from 'next/link';
+import ProductSearch from '@/components/admin/ProductSearch';
 
 export const revalidate = 0; // Ensure fresh data on every request
 
-export default async function AdminProductsPage() {
+export default async function AdminProductsPage({
+    searchParams,
+}: {
+    searchParams?: {
+        query?: string;
+    };
+}) {
+    const query = searchParams?.query || '';
     const supabase = createClient();
-    const { data: products, error } = await supabase
+
+    let productQuery = supabase
         .from('products')
         .select('*')
         .order('created_at', { ascending: false });
+
+    if (query) {
+        productQuery = productQuery.ilike('name', `%${query}%`);
+    }
+
+    const { data: products, error } = await productQuery;
 
     console.log('Admin Product Fetch:', { count: products?.length, error });
 
@@ -23,7 +38,7 @@ export default async function AdminProductsPage() {
     }
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8 py-8">
+        <div className="px-4 sm:px-6 lg:px-8 py-8 w-full">
             <div className="sm:flex sm:items-center">
                 <div className="sm:flex-auto">
                     <h1 className="text-xl font-semibold text-gray-900">Products</h1>
@@ -42,6 +57,9 @@ export default async function AdminProductsPage() {
             </div>
 
             <div className="mt-8 flex flex-col">
+                <div className="mb-4 w-full md:w-1/3">
+                    <ProductSearch />
+                </div>
                 <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                         <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
@@ -117,3 +135,4 @@ export default async function AdminProductsPage() {
         </div>
     );
 }
+

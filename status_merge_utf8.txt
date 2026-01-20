@@ -1,0 +1,52 @@
+﻿On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	new file:   legacy/.gitignore
+	new file:   legacy/debug.js
+	new file:   legacy/fix_rls.sql
+	new file:   legacy/frontend/about.html
+	new file:   legacy/frontend/brand.html
+	new file:   legacy/frontend/cart.html
+	new file:   legacy/frontend/contact.html
+	new file:   legacy/frontend/css/style.css
+	new file:   legacy/frontend/images/mars_logo.png
+	new file:   legacy/frontend/index.html
+	new file:   legacy/frontend/js/brand.js
+	new file:   legacy/frontend/js/cart.js
+	new file:   legacy/frontend/js/main.js
+	new file:   legacy/frontend/js/product-detail.js
+	new file:   legacy/frontend/product.html
+	new file:   legacy/migration.sql
+	new file:   legacy/netlify.toml
+	new file:   legacy/package-lock.json
+	new file:   legacy/package.json
+	new file:   legacy/schema.sql
+	new file:   legacy/seed.sql
+	new file:   legacy/server/.env.example
+	new file:   legacy/server/debug_mars.js
+	new file:   legacy/server/debug_out.txt
+	new file:   legacy/server/routes/products.js
+	new file:   legacy/server/seed_log.txt
+	new file:   legacy/server/seed_mars.js
+	new file:   legacy/server/seed_mars.sql
+	new file:   legacy/server/seed_output.txt
+	new file:   legacy/server/seed_products.js
+	new file:   legacy/server/server.js
+	new file:   legacy/server/server.log
+	new file:   legacy/server/supabase.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	pull_output.txt
+	pull_output_utf8.txt
+	push_output.txt
+	push_result.txt
+	push_result_3.txt
+	push_result_4.txt
+	push_result_4_utf8.txt
+	push_result_utf8.txt
+	status_final.txt
+	status_merge.txt
+

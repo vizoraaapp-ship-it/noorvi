@@ -1,0 +1,47 @@
+﻿git : To https://gith
+ub.com/vizoraaapp-shi
+p-it/noorvi.git
+At line:1 char:99
++ ... 
+-ship-it/noorvi.git; 
+git push -u origin 
+main > 
+push_result_4.txt 
+2>&1
++                    
+      ~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (To http   
+ s://gith...p-it/    
+noorvi.git:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+ ! [rejected]        
+main -> main 
+(non-fast-forward)
+error: failed to 
+push some refs to 'ht
+tps://github.com/vizo
+raaapp-ship-it/noorvi
+.git'
+hint: Updates were 
+rejected because the 
+tip of your current 
+branch is behind
+hint: its remote 
+counterpart. If you 
+want to integrate 
+the remote changes,
+hint: use 'git pull' 
+before pushing again.
+hint: See the 'Note 
+about fast-forwards' 
+in 'git push --help' 
+for details.
