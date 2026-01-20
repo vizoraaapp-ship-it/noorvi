@@ -4,9 +4,9 @@ export interface Product {
     category: string;
     price: number;
     image_url: string;
-    description: string;
-    brand?: string;
-    // adding created_at as it's often used for sorting, though not strictly required by user prompt, it's good practice
+    images: string[] | null;
+    description: string | null;
+    brand?: string | null;
     created_at?: string;
 }
 

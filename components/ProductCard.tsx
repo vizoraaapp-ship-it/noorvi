@@ -15,7 +15,7 @@ interface ProductCardProps extends Partial<Product> {
     category: string;
     price: number;
     imageUrl: string;
-    brand?: string;
+    brand?: string | null;
     isWishlisted?: boolean; // New Prop
 }
 

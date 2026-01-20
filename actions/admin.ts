@@ -163,7 +163,7 @@ export async function updateProduct(id: string, prevState: any, formData: FormDa
         description,
         brand,
         images: finalImageUrls,
-        image_url: finalImageUrls.length > 0 ? finalImageUrls[0] : null // Update primary image
+        image_url: finalImageUrls.length > 0 ? finalImageUrls[0] : undefined // Update primary image
     }).eq('id', id)
 
     if (error) {
