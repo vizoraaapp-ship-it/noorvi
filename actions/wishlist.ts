@@ -46,15 +46,20 @@ export async function toggleWishlist(productId: string) {
 }
 
 export async function getWishlistIds() {
-    const supabase = createActionClient()
-    const { data: { user } } = await supabase.auth.getUser()
+    try {
+        const supabase = createActionClient()
+        const { data: { user } } = await supabase.auth.getUser()
 
-    if (!user) return []
+        if (!user) return []
 
-    const { data } = await supabase
-        .from('wishlist')
-        .select('product_id')
-        .eq('user_id', user.id)
+        const { data } = await supabase
+            .from('wishlist')
+            .select('product_id')
+            .eq('user_id', user.id)
 
-    return data?.map(item => item.product_id) || []
+        return data?.map(item => item.product_id) || []
+    } catch (error) {
+        console.error('Failed to get wishlist ids (likely missing env vars):', error);
+        return [];
+    }
 }
