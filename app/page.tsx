@@ -14,9 +14,9 @@ interface Category {
 }
 
 // Data fetching
-async function getProducts(): Promise<Product[]> {
+async function getProducts(): Promise<Product[] | null> {
   const supabase = createSafeSupabaseClient();
-  if (!supabase) return [];
+  if (!supabase) return null;
 
   try {
     const { data, error } = await supabase
@@ -80,22 +80,37 @@ export default async function Home() {
         {/* Featured Products */}
         <h2 className="text-lg font-bold text-gray-800 mb-2 px-1 mt-4 md:mt-6">Best Selling Products</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 px-0.5 md:px-1">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              category={product.category}
-              price={product.price}
-              imageUrl={product.image_url}
-              brand={product.brand}
-              isWishlisted={wishlistSet.has(product.id)}
-            />
-          ))}
-          {products.length === 0 && (
+          {products === null ? (
+            <div className="col-span-full text-center py-12 bg-red-50 rounded-lg border border-red-100 p-4">
+              <h3 className="text-red-800 font-bold mb-2">Configuration Error</h3>
+              <p className="text-red-600 mb-4">The application is not connected to the database.</p>
+              <div className="text-sm text-red-700 bg-white p-3 rounded inline-block text-left">
+                <p className="font-semibold">Action Required in Netlify:</p>
+                <ul className="list-disc pl-5 mt-1 space-y-1">
+                  <li>Go to <strong>Site configuration &gt; Environment variables</strong></li>
+                  <li>Add <code>NEXT_PUBLIC_SUPABASE_URL</code></li>
+                  <li>Add <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code></li>
+                  <li>Redeploy the site</li>
+                </ul>
+              </div>
+            </div>
+          ) : products.length === 0 ? (
             <div className="col-span-full text-center py-12 text-gray-500 bg-white rounded-lg">
               No products found. Please ensure database is seeded.
             </div>
+          ) : (
+            products.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                category={product.category}
+                price={product.price}
+                imageUrl={product.image_url}
+                brand={product.brand}
+                isWishlisted={wishlistSet.has(product.id)}
+              />
+            ))
           )}
         </div>
       </div>
