@@ -21,10 +21,16 @@ export default function SignupPage() {
             const result = await signUp(formData)
             if (result?.error) {
                 setError(result.error)
+            } else if (result?.redirect) {
+                // Auto-login successful
+                router.push(result.redirect)
+                router.refresh()
             } else if (result?.success) {
                 setSuccess(result.message || 'Signup successful!')
-                // Optional: redirect to login after a delay
-                setTimeout(() => router.push('/login'), 2000)
+                // Optional: redirect to login after a delay if explicit login required
+                if (!result.message?.includes('check your email')) {
+                    setTimeout(() => router.push('/login'), 2000)
+                }
             }
         } catch (e) {
             setError('An unexpected error occurred')

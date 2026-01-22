@@ -11,7 +11,7 @@ export async function signUp(formData: FormData) {
     const phone = formData.get('phone') as string
     const supabase = createActionClient()
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
@@ -26,9 +26,13 @@ export async function signUp(formData: FormData) {
         return { error: error.message }
     }
 
-    // Redirect to verify email page or login if email confirmation is disabled
-    // For now, redirect to login with a message
-    return { success: true, message: 'Signup successful! Please log in.' }
+    // If session exists, user is logged in (Email confirmation disabled or auto-confirmed)
+    if (data.session) {
+        return { success: true, redirect: '/' }
+    }
+
+    // Email confirmation required
+    return { success: true, message: 'Signup successful! Please check your email to confirm.' }
 }
 
 export async function signIn(formData: FormData) {
