@@ -130,9 +130,9 @@ export default async function ProductPage({ params }: PageProps) {
                         </div>
 
                         <div className="flex items-end gap-3 mb-6">
-                            <span className="text-3xl font-bold text-gray-900">₹{product.price}</span>
-                            <span className="text-sm text-gray-500 line-through mb-1">₹{Math.round(product.price * 1.4)}</span>
-                            <span className="text-sm font-bold text-green-600 mb-1">40% OFF</span>
+                            <span className="text-3xl font-bold text-gray-900">₹{Math.round(product.price * 0.75)}</span>
+                            <span className="text-sm text-gray-500 line-through mb-1">₹{product.price}</span>
+                            <span className="text-sm font-bold text-green-600 mb-1">25% OFF</span>
                         </div>
 
                         {/* Offers/Coupons mock */}
@@ -172,9 +172,9 @@ export default async function ProductPage({ params }: PageProps) {
 
                         {/* Action Buttons - Sticky on mobile */}
                         <div className="mt-auto fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-gray-100 md:static md:p-0 md:bg-transparent md:border-0 z-50 flex gap-3 shadow-top md:shadow-none">
-                            <AddToCartButton product={product} />
+                            <AddToCartButton product={{ ...product, price: Math.round(product.price * 0.75) }} />
                             <a
-                                href={`https://wa.me/?text=I want to buy ${product.name} - Price: ${product.price}`}
+                                href={`https://wa.me/?text=I want to buy ${product.name} - Price: ${Math.round(product.price * 0.75)}`}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 rounded-md transition-colors flex items-center justify-center gap-2"

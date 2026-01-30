@@ -24,12 +24,16 @@ export default function ProductCard({ id, name, category, price, imageUrl, brand
     const [isLoading, setIsLoading] = useState(false);
 
     // Mock data for visual completeness matching the reference image
+    // Implement 25% discount logic
+    const originalPrice = price; // DB price is the MRP/Original Price
+    const discountPercentage = 25;
+    const sellingPrice = Math.round(originalPrice * (1 - discountPercentage / 100));
+
+    // Mock data for visual completeness matching the reference image
     const rating = 4.2;
     // Deterministic random based on ID to avoid hydration mismatch
     const seed = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     const ratingCount = 500 + (seed * 123) % 4500;
-    const originalPrice = Math.round(price * 1.35);
-    const discount = Math.round(((originalPrice - price) / originalPrice) * 100);
 
     const handleWishlistToggle = async (e: React.MouseEvent) => {
         e.preventDefault();
@@ -59,7 +63,7 @@ export default function ProductCard({ id, name, category, price, imageUrl, brand
         addToCart({
             id,
             name,
-            price,
+            price: sellingPrice, // Add to cart at the discounted price
             quantity: 1,
             image_url: imageUrl
         });
@@ -112,10 +116,11 @@ export default function ProductCard({ id, name, category, price, imageUrl, brand
 
                     <div className="mt-auto">
                         {/* Price Row */}
+                        {/* Price Row */}
                         <div className="flex flex-wrap items-baseline gap-1 md:gap-2 mb-1 md:mb-2">
-                            <span className="text-sm md:text-base font-bold text-gray-900">₹{price}</span>
+                            <span className="text-sm md:text-base font-bold text-gray-900">₹{sellingPrice}</span>
                             <span className="text-[10px] md:text-xs text-gray-500 line-through">₹{originalPrice}</span>
-                            <span className="text-[10px] md:text-xs font-bold text-green-600">{discount}% off</span>
+                            <span className="text-[10px] md:text-xs font-bold text-green-600">{discountPercentage}% off</span>
                         </div>
 
                         {/* Lowest Price Tag */}
