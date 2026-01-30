@@ -1,0 +1,12 @@
+[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Found 16 updated products out of 86 total.
+Poppins Lip Crayon: /images/mars/POPPINSLIPCRAYON.png
+Creamy Matte Lipstick: /images/mars/CREAMY MATTE.png
+Non-Transfer Butter Stick: /images/mars/NON TRANSFERBUTTERSTICK.png
+Silk Matte Lipstick: /images/mars/SILK MATTELIPSTICK.png
+Super Stay Lipstick: /images/mars/SUPER STAYLIPSTICK.png
+Plush Velvet Lipstick: /images/mars/PLUSH VELVET.png
+Matte Muse Lipstick: /images/mars/MATTEMUSELIPSTICK (1).png
+Edge of Desire Lip Liner: /images/mars/EDGE OF DESIRE.png
+Edge of Desire Lip Liner with Holder: /images/mars/EDGE OF DESIRE.png
+Drip Lip Mist: /images/mars/DRIP LIPMIST.png

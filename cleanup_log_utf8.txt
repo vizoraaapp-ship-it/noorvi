@@ -1,0 +1,23 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ­ƒöÉ prevent committing .env to code: https://dotenvx.com/precommit
+Final Cleanup...
+Linked: Popstar Liquid Mousse Lipstick -> popstarliquidmousselipstick.png
+Linked: Edge of Desire Lip Liner -> edgeofdesire.png
+Linked: Drip Lip Mist -> driplipmist.png
+Linked: Infinity Lip Palette -> infinitylippalette.png
+Linked: Love Track -> lovetrack.png
+Linked: Non Transfer Butter Stick -> nontransferbutterstick.png
+Linked: Silk Matte Lipstick -> silkmattelipstick.png
+Linked: Poppins Lip Crayon -> poppinslipcrayon.png
+Linked: Super Stay Lipstick -> superstaylipstick.png
+Linked: Cinemagic Non Transfer Lip Gloss -> cinemagicnontransferlipgloss.png
+Linked: Matte Lip Color -> mattelipcolor.png
+Linked: Queen of Mattes -> queenofmattes.png
+Linked: Hydratint Balm -> hydratintbalm.png
+Linked: Edge of Desire Lip Liner-Holder -> edgeofdesire.png
+Linked: Matte Muse Lipstick -> mattemuselipstick1.png
+Linked: Lip Lollies Lip Balm -> liplollieslipbalm1.png
+Linked: Creamy Matte Lipstick -> creamymatte.png
+Linked: Plush Velvet Lipstick -> plushvelvet.png
+Linked: Colorbum Liquid Lipstick -> marscolorbumlipstick.png
+Linked: Cloud Kiss Lipstick -> cloudkiss11.png
+Cleanup done.

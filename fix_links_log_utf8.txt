@@ -1,0 +1,6 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ­ƒøá´©Å  run anywhere with `dotenvx run -- yourcommand`
+Starting Link Fixer...
+Found 23 physical files.
+Fix complete.
+Updated DB records: 173
+Products using fallback (no match found): 170 (approx, includes previously set fallbacks)

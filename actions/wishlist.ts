@@ -1,6 +1,6 @@
 'use server'
 
-import { createActionClient } from '@/lib/supabase/server'
+import { createActionClient, createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 
 export async function toggleWishlist(productId: string) {
@@ -47,7 +47,7 @@ export async function toggleWishlist(productId: string) {
 
 export async function getWishlistIds() {
     try {
-        const supabase = createActionClient()
+        const supabase = createClient()
         const { data: { user } } = await supabase.auth.getUser()
 
         if (!user) return []

@@ -24,6 +24,14 @@ export const createClient = (): SupabaseClient<Database> => {
                 // Server Components cannot remove cookies.
             },
         } as any)
+    }, {
+        options: {
+            auth: {
+                persistSession: false,
+                autoRefreshToken: false,
+                detectSessionInUrl: false,
+            }
+        } as any
     }) as any as SupabaseClient<Database>
 }
 

@@ -1,0 +1,18 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ­ƒöÉ prevent building .env in docker: https://dotenvx.com/prebuild
+Starting Strict Sync...
+Found 23 physical files.
+node : C:\Users\hp\OneDrive\Desktop\noorvi\scripts\strict_sync.js:85
+At line:1 char:1
++ node scripts/strict_sync.js > group_check_log.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\hp\One...rict_sync.js:85:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+        if (matches.length > 0) {
+        ^
+
+ReferenceError: matches is not defined
+    at strictSync (C:\Users\hp\OneDrive\Desktop\noorvi\scripts\strict_sync.js:85:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+Node.js v22.12.0

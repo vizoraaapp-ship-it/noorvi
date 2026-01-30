@@ -1,0 +1,12 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ðŸ› ï¸  run anywhere with `dotenvx run -- yourcommand`
+Found 186 updated products out of 186 total.
+Edge of Desire Lip Liner: /images/mars/edgeofdesirelipliner.png
+Popstar Liquid Mousse Lipstick: /images/mars/popstarliquidmousselipstick.png
+City Paradise Makeup Kit - Delhi: /images/mars/cityparadisemakeupkitdelhi.png
+Take a Glow Primer: /images/mars/takeaglowprimer.png
+So Black Liquid Eyeliner: /images/mars/soblackliquideyeliner.png
+Mist Foundation: /images/mars/mistfoundation.png
+Artistry Liquid Foundation: /images/mars/artistryliquidfoundation.png
+Miss Wipeout Nail Polish Remover: /images/mars/misswipeoutnailpolishremover.png
+Drip Lip Mist: /images/mars/driplipmist.png
+Infinity Lip Palette: /images/mars/infinitylippalette.png

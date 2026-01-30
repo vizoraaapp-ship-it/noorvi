@@ -1,0 +1,12 @@
+[dotenv@17.2.3] injecting env (2) from .env.local -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+Found 19 updated products out of 186 total.
+Lip Crayon: /images/mars/POPPINSLIPCRAYON.png
+Edge of Desire Lip Liner: /images/mars/EDGE OF DESIRE.png
+Popstar Liquid Mousse Lipstick: /images/mars/POPSTARLIQUIDMOUSSELIPSTICK.png
+Plush Velvet Lipstick: /images/mars/PLUSH VELVET.png
+Creamy Matte Lipstick: /images/mars/CREAMY MATTE.png
+Edge of Desire Lip Liner-Holder: /images/mars/EDGEOFDESIRELIPLINERHOLDER.png
+Drip Lip Mist: /images/mars/DRIP LIPMIST.png
+Infinity Lip Palette: /images/mars/INFINITYLIPPALETTE.png
+Love Track: /images/mars/LOVETRACK.png
+Non Transfer Butter Stick: /images/mars/NON TRANSFERBUTTERSTICK.png

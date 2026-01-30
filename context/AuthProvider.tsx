@@ -24,27 +24,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     console.log('AuthProvider: Rendering, user:', user?.email);
 
     useEffect(() => {
-        const getInitialSession = async () => {
-            const { data: { session } } = await supabase.auth.getSession();
-            console.log('AuthProvider: Initial getSession:', session?.user?.email);
-            setSession(session);
-            setUser(session?.user ?? null);
-            setIsLoading(false);
-        };
+        let mounted = true;
 
-        getInitialSession();
-
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((event: string, session: Session | null) => {
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((event: string, session: Session | null) => {
             console.log('AuthProvider: onAuthStateChange event:', event, 'User:', session?.user?.email);
-            setSession(session);
-            setUser(session?.user ?? null);
-            setIsLoading(false);
+
+            if (mounted) {
+                setSession(session);
+                setUser(session?.user ?? null);
+                setIsLoading(false);
+            }
+
             if (event === 'SIGNED_OUT') {
                 router.refresh();
             }
         });
 
+        // Trigger an initial session check via onAuthStateChange logic or just accessing the property?
+        // Actually, createClientComponentClient from auth-helpers typically initializes session from cookie.
+        // But onAuthStateChange might not fire INITIAL_SESSION immediately in all versions of auth-helpers?
+        // Let's safe guard it.
+
         return () => {
+            mounted = false;
             subscription.unsubscribe();
         };
     }, [router, supabase]);

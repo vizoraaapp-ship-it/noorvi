@@ -1,0 +1,21 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ­ƒöæ add access controls to secrets: https://dotenvx.com/ops
+Starting Audit...
+
+=== MATCHED PRODUCTS (20) ===
+
+=== ORPHANED FILES (Exist but NOT grouped) (3) ===
+cloudkiss12.png
+liplollieslipbalm2.png
+mattemuselipstick2.png
+
+=== UNMATCHED PRODUCTS (Sample 10) ===
+Miss Wipeout Nail Polish Remover
+City Paradise Makeup Kit - Delhi
+Take a Glow Primer
+So Black Liquid Eyeliner
+Mist Foundation
+Artistry Liquid Foundation
+Lipstick Pencil
+ArtistÔÇÖs Arsenal Eyeshadow Palette
+Eye Enchanted Dual-Ended Brush Set
+Color Changing Lip Oil

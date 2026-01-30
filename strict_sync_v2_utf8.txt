@@ -1,0 +1,6 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ­ƒöÉ prevent committing .env to code: https://dotenvx.com/precommit
+Starting Strict Sync...
+Found 23 physical files.
+Sync complete.
+Matched: 20
+Unmatched (Placeholder): 166

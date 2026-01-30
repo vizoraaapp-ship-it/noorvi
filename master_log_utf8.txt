@@ -1,0 +1,43 @@
+﻿[dotenv@17.2.3] injecting env (2) from .env.local -- tip: ­ƒöÉ prevent committing .env to code: https://dotenvx.com/precommit
+Starting Master Fix...
+Renamed: CINEMAGICNONTRANSFERLIPGLOSS.png -> cinemagicnontransferlipgloss.png
+Renamed: cloud_kiss1_1.png -> cloudkiss11.png
+Renamed: cloud_kiss1_2.png -> cloudkiss12.png
+Renamed: creamy_matte.png -> creamymatte.png
+Renamed: drip_lipmist.png -> driplipmist.png
+Renamed: EDGEOFDESIRELIPLINERHOLDER.png -> edgeofdesireliplinerholder.png
+Renamed: edge_of_desire.png -> edgeofdesire.png
+Renamed: HYDRATINTBALM.png -> hydratintbalm.png
+Renamed: INFINITYLIPPALETTE.png -> infinitylippalette.png
+Renamed: liplollieslipbalm_1.png -> liplollieslipbalm1.png
+Renamed: liplollieslipbalm_2.png -> liplollieslipbalm2.png
+Renamed: LOVETRACK.png -> lovetrack.png
+Renamed: MARSCOLORBUMLIPSTICK.png -> marscolorbumlipstick.png
+Renamed: MATTELIPCOLOR.png -> mattelipcolor.png
+Renamed: mattemuselipstick_1.png -> mattemuselipstick1.png
+Renamed: mattemuselipstick_2.png -> mattemuselipstick2.png
+Renamed: non_transferbutterstick.png -> nontransferbutterstick.png
+Renamed: plush_velvet.png -> plushvelvet.png
+Renamed: POPPINSLIPCRAYON.png -> poppinslipcrayon.png
+Renamed: POPSTARLIQUIDMOUSSELIPSTICK.png -> popstarliquidmousselipstick.png
+Renamed: QUEENOFMATTES.png -> queenofmattes.png
+Renamed: silk_mattelipstick.png -> silkmattelipstick.png
+Renamed: super_staylipstick.png -> superstaylipstick.png
+Match: Edge of Desire Lip Liner -> edgeofdesireliplinerholder.png
+Match: Popstar Liquid Mousse Lipstick -> popstarliquidmousselipstick.png
+Match: Edge of Desire Lip Liner-Holder -> edgeofdesireliplinerholder.png
+Match: Drip Lip Mist -> driplipmist.png
+Match: Infinity Lip Palette -> infinitylippalette.png
+Match: Love Track -> lovetrack.png
+Match: Non Transfer Butter Stick -> nontransferbutterstick.png
+Match: Silk Matte Lipstick -> silkmattelipstick.png
+Match: Poppins Lip Crayon -> poppinslipcrayon.png
+Match: Super Stay Lipstick -> superstaylipstick.png
+Match: Cinemagic Non Transfer Lip Gloss -> cinemagicnontransferlipgloss.png
+Match: Matte Lip Color -> mattelipcolor.png
+Match: Matte Muse Lipstick -> mattemuselipstick1.png
+Match: Queen of Mattes -> queenofmattes.png
+Match: Lip Lollies Lip Balm -> liplollieslipbalm1.png
+Match: Hydratint Balm -> hydratintbalm.png
+Match: Lip Crayon -> poppinslipcrayon.png
+Updated 17 products.
