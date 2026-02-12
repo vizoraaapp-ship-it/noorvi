@@ -41,7 +41,7 @@ export default async function OrdersPage() {
     const { data, error } = await query
 
     // Enrich orders with product_id if possible (since old schema might miss it)
-    const orders = data ? await Promise.all(data.map(async (order) => {
+    const orders = data ? await Promise.all(data.map(async (order: any) => {
         if (order.product_id) return order;
 
         // Try to find product_id by name
