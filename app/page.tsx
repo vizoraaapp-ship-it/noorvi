@@ -49,7 +49,7 @@ async function getBrands(): Promise<string[]> {
 
     if (!data) return [];
 
-    const uniqueBrands = [...new Set(data.map(p => p.brand).filter(Boolean))] as string[];
+    const uniqueBrands = [...new Set((data as any[]).map(p => p.brand).filter(Boolean))] as string[];
     return uniqueBrands;
   } catch (e) {
     console.error('Unexpected error fetching brands:', e);
