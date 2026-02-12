@@ -5,14 +5,16 @@ interface CategorySectionProps {
     categories: { id: string; name: string }[];
 }
 
-// Map categories to images (in a real app these might come from DB)
+// Map categories to images using local product images for better reliability and relevance
 const CATEGORY_IMAGES: Record<string, string> = {
-    'Lipstick': 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=150&q=80',
-    'Mascara': 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=150&q=80',
-    'Foundation': 'https://images.unsplash.com/photo-1590156206657-b16ce724c326?w=150&q=80',
-    'Compact': 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=150&q=80',
-    'Skincare': 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&q=80',
-    'Accessories': 'https://images.unsplash.com/photo-1596462502278-27bfdd403348?w=150&q=80',
+    'LIPS': '/images/mars/creamy_matte_lipstick.png',
+    'EYES': '/images/mars/36_color_eyeshadow_palette.png',
+    'FACE': '/images/mars/face_primer.png',
+    'FACE KITS': '/images/mars/all_i_need_makeup_kit.png',
+    'REMOVERS & WIPES': '/images/mars/makeup_remover_wipes.png',
+    'TOOLS & BRUSHES': '/images/mars/professional_brush_set.png',
+    'SPONGES & BLENDERS': '/images/mars/BEAUTY BLENDER.png',
+    'ACCESSORIES': '/images/mars/vanity_bag.png',
 };
 
 export default function CategorySection({ categories }: CategorySectionProps) {

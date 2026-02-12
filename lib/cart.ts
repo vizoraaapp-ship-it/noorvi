@@ -9,12 +9,14 @@ export const getCart = (): CartItem[] => {
 
 export const addToCart = (product: CartItem) => {
     const cart = getCart();
-    const existingItemIndex = cart.findIndex((item) => item.id === product.id);
+    const existingItemIndex = cart.findIndex((item) =>
+        item.id === product.id && item.shade === product.shade
+    );
 
     if (existingItemIndex > -1) {
         cart[existingItemIndex].quantity += 1;
     } else {
-        cart.push({ ...product, quantity: 1 });
+        cart.push({ ...product });
     }
 
     localStorage.setItem('veda_cart', JSON.stringify(cart));
@@ -22,16 +24,16 @@ export const addToCart = (product: CartItem) => {
     window.dispatchEvent(new Event('cart-updated'));
 };
 
-export const removeFromCart = (productId: string) => {
+export const removeFromCart = (productId: string, shade?: string) => {
     const cart = getCart();
-    const newCart = cart.filter((item) => item.id !== productId);
+    const newCart = cart.filter((item) => !(item.id === productId && item.shade === shade));
     localStorage.setItem('veda_cart', JSON.stringify(newCart));
     window.dispatchEvent(new Event('cart-updated'));
 };
 
-export const updateQuantity = (productId: string, quantity: number) => {
+export const updateQuantity = (productId: string, quantity: number, shade?: string) => {
     const cart = getCart();
-    const itemIndex = cart.findIndex((item) => item.id === productId);
+    const itemIndex = cart.findIndex((item) => item.id === productId && item.shade === shade);
 
     if (itemIndex > -1) {
         if (quantity <= 0) {

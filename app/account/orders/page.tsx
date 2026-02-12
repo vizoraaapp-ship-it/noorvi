@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 export const dynamic = 'force-dynamic';
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronLeft, Package, Clock, MapPin } from 'lucide-react'
+import { ChevronLeft, Package, Clock, MapPin, Star } from 'lucide-react'
 
 export default async function OrdersPage() {
     const supabase = createClient()
@@ -38,7 +38,22 @@ export default async function OrdersPage() {
         query = query.eq('user_id', user.id)
     }
 
-    const { data: orders, error } = await query
+    const { data, error } = await query
+
+    // Enrich orders with product_id if possible (since old schema might miss it)
+    const orders = data ? await Promise.all(data.map(async (order) => {
+        if (order.product_id) return order;
+
+        // Try to find product_id by name
+        const { data: product } = await supabase
+            .from('products')
+            .select('id')
+            .ilike('name', order.product_name)
+            .limit(1)
+            .single();
+
+        return { ...order, product_id: product?.id };
+    })) : [];
 
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -79,6 +94,17 @@ export default async function OrdersPage() {
                                                         <Clock className="h-3 w-3" />
                                                         {new Date(order.created_at).toLocaleDateString()}
                                                     </span>
+                                                </div>
+
+                                                {/* Rate & Review Button */}
+                                                <div className="mt-4">
+                                                    <Link
+                                                        href={`/product/${order.product_id || ''}?review=true#reviews`}
+                                                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-blue-600 text-blue-600 rounded text-xs font-bold hover:bg-blue-50 transition-colors"
+                                                    >
+                                                        <Star className="h-3.5 w-3.5 fill-blue-600" />
+                                                        Rate & Review Product
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>

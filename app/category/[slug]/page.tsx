@@ -38,6 +38,9 @@ interface CategoryPageProps {
 
 import { getWishlistIds } from '@/actions/wishlist';
 
+import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
+
 export default async function CategoryPage({ params }: CategoryPageProps) {
     const categoryName = decodeURIComponent(params.slug);
     console.log(`[CategoryPage] Fetching products for category: "${categoryName}"`);
@@ -49,32 +52,46 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     console.log(`[CategoryPage] Found ${products.length} products for category: "${categoryName}"`);
 
     return (
-        <div className="container mx-auto px-2 md:px-4 py-4">
-            <h1 className="text-xl font-bold text-gray-800 mb-4 capitalize">{categoryName}</h1>
+        <div className="bg-gray-50 min-h-screen">
+            {/* Header Bar */}
+            <div className="bg-white border-b border-gray-200">
+                <div className="container mx-auto px-4 h-12 flex items-center gap-4">
+                    <Link href="/" className="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                        <ChevronLeft className="h-4 w-4" />
+                        <span>Back to Home</span>
+                    </Link>
+                    <div className="h-6 w-[1px] bg-gray-200" />
+                    <h1 className="text-sm md:text-base font-bold text-gray-800 capitalize truncate">
+                        {categoryName}
+                    </h1>
+                </div>
+            </div>
 
-            {products.length === 0 ? (
-                <div className="text-center py-12">
-                    <h3 className="text-lg text-gray-500">No products found in this category.</h3>
-                    <p className="text-sm text-gray-400 mt-2">
-                        (If this is a fresh deploy, ensure Supabase env vars are set)
-                    </p>
-                </div>
-            ) : (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
-                    {products.map((product) => (
-                        <ProductCard
-                            key={product.id}
-                            id={product.id}
-                            name={product.name}
-                            category={product.category}
-                            price={product.price}
-                            imageUrl={product.image_url}
-                            brand={product.brand}
-                            isWishlisted={wishlistSet.has(product.id)}
-                        />
-                    ))}
-                </div>
-            )}
+            <div className="container mx-auto px-2 md:px-4 py-6">
+                {products.length === 0 ? (
+                    <div className="text-center py-12">
+                        <h3 className="text-lg text-gray-500">No products found in this category.</h3>
+                        <p className="text-sm text-gray-400 mt-2">
+                            (If this is a fresh deploy, ensure Supabase env vars are set)
+                        </p>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
+                        {products.map((product) => (
+                            <ProductCard
+                                key={product.id}
+                                id={product.id}
+                                name={product.name}
+                                category={product.category}
+                                price={product.price}
+                                imageUrl={product.image_url}
+                                brand={product.brand}
+                                isWishlisted={wishlistSet.has(product.id)}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

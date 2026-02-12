@@ -1,11 +1,14 @@
 import { createSafeSupabaseClient } from '@/lib/supabase/server';
 import Image from 'next/image';
 import Link from 'next/link';
-import AddToCartButton from '@/components/AddToCartButton';
+import ProductPurchaseActions from '@/components/ProductPurchaseActions';
 import ProductCard from '@/components/ProductCard';
 import ProductImageGallery from '@/components/ProductImageGallery';
+import ReviewSection from '@/components/ReviewSection';
+import RatingSummary from '@/components/RatingSummary';
 import { ChevronLeft, Star, ShoppingBag, Truck, ShieldCheck } from 'lucide-react';
 import { getWishlistIds } from '@/actions/wishlist';
+import { getReviews } from '@/actions/reviews';
 
 export const revalidate = 0;
 
@@ -82,6 +85,17 @@ export default async function ProductPage({ params }: PageProps) {
     const wishlistIds = await getWishlistIds();
     const wishlistSet = new Set(wishlistIds);
 
+    const supabase = createSafeSupabaseClient();
+    const { data: { user } } = await supabase?.auth.getUser() || { data: { user: null } };
+
+    const { data: reviews } = await getReviews(product.id);
+    const reviewStats = {
+        count: reviews?.length || 0,
+        average: reviews && reviews.length > 0
+            ? (reviews.reduce((acc: number, r: any) => acc + (r.rating || 0), 0) / reviews.length).toFixed(1)
+            : '0'
+    };
+
     return (
         <div className="bg-gray-50 min-h-screen pb-20">
             {/* Header / Breadcrumb */}
@@ -121,23 +135,16 @@ export default async function ProductPage({ params }: PageProps) {
                             <h1 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight mb-2">
                                 {product.name}
                             </h1>
-                            <div className="flex items-center gap-2 mb-4">
-                                <div className="bg-green-600 text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
-                                    4.2 <Star className="h-3 w-3 fill-white" />
-                                </div>
-                                <span className="text-sm text-gray-500">(1,250 ratings)</span>
-                            </div>
+                            <RatingSummary
+                                average={reviewStats.average}
+                                count={reviewStats.count}
+                            />
                         </div>
 
                         <div className="flex items-end gap-3 mb-6">
                             <span className="text-3xl font-bold text-gray-900">₹{Math.round(product.price * 0.75)}</span>
                             <span className="text-sm text-gray-500 line-through mb-1">₹{product.price}</span>
                             <span className="text-sm font-bold text-green-600 mb-1">25% OFF</span>
-                        </div>
-
-                        {/* Offers/Coupons mock */}
-                        <div className="mb-6 p-3 bg-green-50 rounded border border-green-100 text-sm md:text-base">
-                            <span className="font-bold text-green-700">Bank Offer</span> 10% off on SBI Credit Cards, up to ₹1250.
                         </div>
 
                         {/* Description */}
@@ -152,37 +159,38 @@ export default async function ProductPage({ params }: PageProps) {
                         <div className="grid grid-cols-3 gap-4 mb-8 text-center">
                             <div className="flex flex-col items-center gap-2">
                                 <div className="p-3 bg-blue-50 rounded-full text-blue-600">
-                                    <Truck className="h-5 w-5" />
+                                    <ShieldCheck className="h-5 w-5" />
                                 </div>
-                                <span className="text-xs text-gray-600">Free Delivery</span>
+                                <span className="text-[10px] md:text-xs text-gray-600 font-medium">Verified Beauty Brands</span>
                             </div>
                             <div className="flex flex-col items-center gap-2">
                                 <div className="p-3 bg-purple-50 rounded-full text-purple-600">
-                                    <ShieldCheck className="h-5 w-5" />
+                                    <Truck className="h-5 w-5" />
                                 </div>
-                                <span className="text-xs text-gray-600">Genuine Product</span>
+                                <span className="text-[10px] md:text-xs text-gray-600 font-medium">Reliable Order Fulfillment</span>
                             </div>
                             <div className="flex flex-col items-center gap-2">
                                 <div className="p-3 bg-orange-50 rounded-full text-orange-600">
                                     <ShoppingBag className="h-5 w-5" />
                                 </div>
-                                <span className="text-xs text-gray-600">Easy Returns</span>
+                                <span className="text-[10px] md:text-xs text-gray-600 font-medium">Direct Brand Sourcing</span>
                             </div>
                         </div>
 
-                        {/* Action Buttons - Sticky on mobile */}
-                        <div className="mt-auto fixed bottom-0 left-0 right-0 p-3 bg-white border-t border-gray-100 md:static md:p-0 md:bg-transparent md:border-0 z-50 flex gap-3 shadow-top md:shadow-none">
-                            <AddToCartButton product={{ ...product, price: Math.round(product.price * 0.75) }} />
-                            <a
-                                href={`https://wa.me/?text=I want to buy ${product.name} - Price: ${Math.round(product.price * 0.75)}`}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 rounded-md transition-colors flex items-center justify-center gap-2"
-                            >
-                                Buy Now
-                            </a>
-                        </div>
+                        {/* Action Buttons */}
+                        <ProductPurchaseActions
+                            product={product}
+                            discountedPrice={Math.round(product.price * 0.75)}
+                        />
                     </div>
+                </div>
+
+                {/* Reviews Section */}
+                <div id="reviews">
+                    <ReviewSection
+                        productId={product.id}
+                        userId={user?.id}
+                    />
                 </div>
 
                 {/* Similar Products */}

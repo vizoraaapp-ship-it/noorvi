@@ -4,13 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 241, 243, 246;
-  --background-end-rgb: 241, 243, 246;
+  --background-start-rgb: 253, 221, 230;
+  --background-end-rgb: 253, 221, 230;
 }
 
+html,
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background-color: #FDDDE6 !important;
+  min-height: 100%;
 }
 
 @layer utilities {

@@ -10,7 +10,16 @@ const config: Config = {
             colors: {
                 primary: "#2874f0", // Flipkart Blue
                 secondary: "#fb641b", // Flipkart Orange
-                background: "#f1f3f6", // Flipkart BG
+                "veda-background": "#FDDDE6", // Soft Pink Background
+                "pink-soft": "#FDDDE6",
+                "pink-pastel": "#FFD1DC",
+                veda: {
+                    tan: "#D2B48C",
+                    gold: "#B8860B",
+                    cream: "#FFFDD0",
+                    dark: "#2D2D2D",
+                    accent: "#C5A059",
+                }
             },
         },
     },

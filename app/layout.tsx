@@ -19,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background min-h-screen flex flex-col`}>
+      <body
+        className={`${inter.className} bg-veda-background min-h-screen flex flex-col`}
+        style={{ backgroundColor: '#FDDDE6' }}
+      >
         <AuthProvider>
           <Navbar />
           <main className="flex-grow">

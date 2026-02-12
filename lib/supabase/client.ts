@@ -1,6 +1,8 @@
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@/types/supabase'
 
+let client: any = null;
+
 export const createClient = () => {
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
         console.warn('Supabase Env Vars missing, returning mock client for build safety.');
@@ -14,5 +16,21 @@ export const createClient = () => {
             from: () => ({ select: () => ({ eq: () => ({ single: () => Promise.resolve({ data: null, error: null }), maybeSingle: () => Promise.resolve({ data: null, error: null }), order: () => Promise.resolve({ data: [], error: null }) }) }) })
         } as any;
     }
-    return createClientComponentClient<Database>()
+
+    // Reuse client on the browser to avoid multiple "lock" initializations
+    if (typeof window !== 'undefined' && client) return client;
+
+    const newClient = createClientComponentClient<Database>({
+        options: {
+            auth: {
+                persistSession: true,
+                autoRefreshToken: true,
+                detectSessionInUrl: true,
+                storageKey: 'noorvi-auth-token',
+            }
+        }
+    })
+
+    if (typeof window !== 'undefined') client = newClient;
+    return newClient;
 }

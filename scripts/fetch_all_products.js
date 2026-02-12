@@ -6,18 +6,19 @@ const supabase = createClient(
     process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-async function checkImages() {
+async function fetchAllProducts() {
     const { data, error } = await supabase
         .from('products')
-        .select('name, image_url')
-        .eq('brand', 'MARS')
-        .limit(20);
+        .select('*')
+        .limit(5);
 
-    if (error) console.error(error);
-    else {
-        console.log('Current Database State (First 20 MARS products):');
-        data.forEach(p => console.log(`${p.name} => ${p.image_url}`));
+    if (error) {
+        console.error('Error fetching products:', error);
+        return;
     }
+
+    console.log(`Fetched ${data.length} sample products.`);
+    data.forEach(p => console.log(`${p.name} | Brand: ${p.brand}`));
 }
 
-checkImages();
+fetchAllProducts();

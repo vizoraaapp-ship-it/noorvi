@@ -21,7 +21,7 @@ export default async function AccountPage() {
         .single()
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-50 pt-32 pb-12 px-4 sm:px-6 lg:px-8">
             {/* Dashboard Headers */}
             <div className="max-w-7xl mx-auto mb-8">
                 <div className="bg-white rounded-lg shadow-sm p-6 flex items-center justify-between">

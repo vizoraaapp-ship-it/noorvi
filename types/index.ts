@@ -12,4 +12,5 @@ export interface Product {
 
 export interface CartItem extends Pick<Product, 'id' | 'name' | 'price' | 'image_url'> {
     quantity: number;
+    shade?: string;
 }

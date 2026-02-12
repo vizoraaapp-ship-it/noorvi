@@ -19,7 +19,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [session, setSession] = useState<Session | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
-    const [supabase] = useState(() => createClient())
+    const [supabase] = useState(() => createClient());
 
     console.log('AuthProvider: Rendering, user:', user?.email);
 
