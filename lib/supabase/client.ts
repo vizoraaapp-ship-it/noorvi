@@ -20,16 +20,7 @@ export const createClient = () => {
     // Reuse client on the browser to avoid multiple "lock" initializations
     if (typeof window !== 'undefined' && client) return client;
 
-    const newClient = createClientComponentClient<Database>({
-        options: {
-            auth: {
-                persistSession: true,
-                autoRefreshToken: true,
-                detectSessionInUrl: true,
-                storageKey: 'noorvi-auth-token',
-            }
-        }
-    })
+    const newClient = createClientComponentClient<Database>()
 
     if (typeof window !== 'undefined') client = newClient;
     return newClient;
