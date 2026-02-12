@@ -1,4 +1,5 @@
 import { createSafeSupabaseClient } from '@/lib/supabase/server';
+import HomeProductGrid from '@/components/HomeProductGrid';
 import ProductCard from '@/components/ProductCard';
 import HeroBanner from '@/components/HeroBanner';
 import ShopByCategory from '@/components/ShopByCategory';
@@ -146,64 +147,8 @@ export default async function Home() {
         {/* 6. Trending Products */}
         <TrendingProducts products={trending} wishlistSet={wishlistSet} />
 
-        {/* 7. All Products Listing */}
-        <section className="py-2">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
-            <div>
-              <h2 className="text-3xl font-serif text-veda-dark">All Products</h2>
-            </div>
-
-            {/* Simple Filter/Sort Controls */}
-            <div className="flex gap-4">
-              <select className="bg-white border border-veda-gold/20 rounded-xl px-4 py-2 text-sm text-veda-dark focus:ring-veda-gold outline-none">
-                <option>Sort by: Newest</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-              </select>
-              <button className="flex items-center gap-2 bg-veda-dark text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-veda-gold transition-colors duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                </svg>
-                Filters
-              </button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 px-4">
-            {allProducts.length === 0 ? (
-              <div className="col-span-full text-center py-20 bg-pink-soft/20 rounded-3xl border border-dashed border-veda-gold/20">
-                <p className="text-gray-400 font-serif italic text-xl">No products discovered yet.</p>
-              </div>
-            ) : (
-              allProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  id={product.id}
-                  name={product.name}
-                  category={product.category}
-                  price={product.price}
-                  imageUrl={product.image_url}
-                  brand={product.brand}
-                  isWishlisted={wishlistSet.has(product.id)}
-                />
-              ))
-            )}
-          </div>
-
-          {/* Pagination Placeholder */}
-          <div className="mt-16 flex justify-center gap-2">
-            {[1, 2, 3].map(n => (
-              <button key={n} className={`w-10 h-10 rounded-full flex items-center justify-center font-medium transition-all duration-300 ${n === 1 ? 'bg-veda-gold text-white shadow-lg shadow-veda-gold/20' : 'bg-white/50 text-veda-dark hover:bg-veda-cream border border-gray-100'}`}>
-                {n}
-              </button>
-            ))}
-            <button className="w-10 h-10 rounded-full bg-white/50 text-veda-dark flex items-center justify-center border border-gray-100 hover:bg-veda-cream transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </section>
+        {/* 7. All Products Listing (Client-side Paginated) */}
+        <HomeProductGrid products={allProducts} wishlistSet={wishlistSet} />
 
         {/* Call to Action Footer Section */}
         <section className="mt-10 relative rounded-[40px] overflow-hidden bg-veda-dark py-20 px-8 md:px-20">
