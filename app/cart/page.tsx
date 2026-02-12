@@ -39,7 +39,7 @@ export default function CartPage() {
                     </svg>
                 </div>
                 <h2 className="text-3xl font-serif text-veda-dark mb-4">Your cart is empty</h2>
-                <p className="text-gray-500 mb-8 italic text-center max-w-md">Looks like you haven't added any professional beauty products to your wholesale order yet.</p>
+                <p className="text-gray-500 mb-8 italic text-center max-w-md">Looks like you haven&apos;t added any professional beauty products to your wholesale order yet.</p>
                 <Link href="/" className="bg-veda-gold text-white py-4 px-10 rounded-full font-bold shadow-lg hover:bg-veda-dark transition-all duration-300">
                     Continue Shopping
                 </Link>

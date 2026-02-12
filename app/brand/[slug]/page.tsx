@@ -175,7 +175,7 @@ export default async function BrandPage({ params, searchParams }: PageProps) {
                         <img src="https://images.unsplash.com/photo-1596462502278-27bfbef4f0f1?q=80&w=2080&auto=format&fit=crop" alt="Tools" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
                             <h3 className="text-white text-2xl font-bold mb-1">Professional Tools</h3>
-                            <p className="text-gray-300 text-sm mb-4">Precision at artist's hand</p>
+                            <p className="text-gray-300 text-sm mb-4">Precision at artist&apos;s hand</p>
                             <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold py-2 px-6 rounded-full w-fit hover:bg-white hover:text-black transition-colors">Explore Range</button>
                         </div>
                     </div>
